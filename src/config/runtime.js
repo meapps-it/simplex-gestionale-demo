@@ -1,0 +1,1 @@
+export const config=Object.freeze({"name":"Gestionale & Inventario","defaultMode":"demo","demoMode":true,"commercialMode":false,"supabaseUrl":"","publishableKey":"","demoLimits":{"products":5,"clients":5,"orders":3,"suppliers":3,"categories":5,"brands":3},"offlineGraceMs":86400000});

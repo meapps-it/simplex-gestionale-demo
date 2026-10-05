@@ -1,0 +1,16 @@
+{
+  "mode": "demo",
+  "commercialMode": false,
+  "name": "Gestionale & Inventario",
+  "limits": {
+    "products": 5,
+    "clients": 5,
+    "orders": 3,
+    "suppliers": 3,
+    "categories": 5,
+    "brands": 3
+  },
+  "base": "/simplex-gestionale-demo/",
+  "version": "7b552811f5844c26",
+  "sourceCommit": "local"
+}
