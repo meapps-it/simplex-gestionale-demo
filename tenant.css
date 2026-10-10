@@ -1,0 +1,27 @@
+/* Applied only when a tenant chooses a palette or a supported navigation variant. */
+:root[data-tenant-theme=custom]{--bg:var(--tenant-bg);--ink:var(--tenant-ink);--muted:var(--tenant-muted)}
+[data-tenant-theme=custom] body,[data-tenant-theme=custom] .auth,[data-tenant-theme=custom] .reference-detail{background:var(--tenant-bg);color:var(--tenant-ink)}
+[data-tenant-theme=custom] .sidebar,[data-tenant-theme=custom] .topbar,[data-tenant-theme=custom] .reference-detail .dialog-head,[data-tenant-theme=custom] .primary,[data-tenant-theme=custom] .dashboard-hero{background:var(--tenant-primary)!important;color:var(--tenant-on-primary)!important}
+[data-tenant-theme=custom] .sidebar :is(.brand,.brand small,.nav,.nav-label,footer,.workspace,.workspace span),[data-tenant-theme=custom] .mobile-brand :is(strong,span),[data-tenant-theme=custom] .topbar :is(button,.crumb){color:var(--tenant-on-primary)!important}
+[data-tenant-theme=custom] :is(.card,.product-card,.contact-list tbody tr,.order-list tbody tr,.detail-grid,.detail-notes,.settings-card,.client-summary){background:var(--tenant-secondary)!important;color:var(--tenant-on-secondary)!important}
+[data-tenant-theme=custom] :is(.card,.detail-grid,.detail-notes,.client-summary) :is(h1,h2,h3,p,strong,small,.muted,.hint,.eyebrow,.price,.product-margin,.product-stock,.value,.note){color:var(--tenant-on-secondary)!important}
+[data-tenant-theme=custom] :is(input,select,textarea,.dialog-body){background:#fff;color:#202025}
+[data-tenant-theme=custom] .sidebar :is(.workspace,.license-card){background:var(--tenant-primary);color:var(--tenant-on-primary);border-color:var(--tenant-on-primary)}
+[data-tenant-theme=custom] :is(.nav.active,.mobile-dock button.active,.detail-dock button.active){background:var(--tenant-accent)!important;color:var(--tenant-on-accent)!important;border-color:var(--tenant-on-accent)!important}
+[data-tenant-theme=custom] :is(.mobile-dock,.detail-dock){background:var(--tenant-secondary);color:var(--tenant-on-secondary)}
+[data-tenant-theme=custom] :is(.mobile-dock,.detail-dock) button,[data-tenant-theme=custom] :is(.mobile-dock,.detail-dock) button span{color:inherit!important}
+[data-tenant-theme=custom] .mobile-brand>img{background:#fff}
+@media(min-width:701px){
+ [data-tenant-layout=right] .sidebar{left:auto;right:0}
+ [data-tenant-layout=right] main{margin-left:0;margin-right:252px}
+ [data-tenant-layout=bottom] .sidebar{display:none}
+ [data-tenant-layout=bottom] main{margin-left:0;margin-right:0;padding-bottom:130px}
+ [data-tenant-layout=bottom] .mobile-dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;flex-wrap:wrap;justify-content:center;gap:6px;padding:10px;background:var(--tenant-secondary,#fff);border-top:1px solid #ccd2db}
+ [data-tenant-layout=bottom] .mobile-dock button{display:flex;flex-direction:column;gap:5px;min-width:85px;padding:8px;font-size:calc(12px * var(--text-scale,1))}
+ [data-tenant-layout=bottom] .mobile-brand{display:flex;align-items:center;gap:12px}
+ [data-tenant-layout=bottom] .mobile-brand img{width:40px;height:40px}
+ [data-tenant-layout=bottom] .mobile-brand span{display:block;font-size:calc(12px * var(--text-scale,1))}
+}
+/* Mobile sidebars fall back to the existing tested drawer and bottom dock. */
+@media(max-width:700px){[data-tenant-layout] main{margin-left:0;margin-right:0}[data-tenant-layout=bottom] .mobile-dock{overflow-x:auto;justify-content:flex-start}[data-tenant-layout=bottom] .mobile-dock button{flex:0 0 72px;min-width:72px}[data-tenant-layout=right] .sidebar{left:auto;right:0;transform:translateX(100%)}[data-tenant-layout=right] .sidebar.open{transform:translateX(0)}}
+

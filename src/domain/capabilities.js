@@ -1,0 +1,4 @@
+import {modules} from './modules.js';
+export const capabilities=Object.freeze({version:2,fields:['app_name','short_name','business_name','subtitle','logo_url','icon_url','primary_color','secondary_color','accent_color','background_color','menu_layout'],menu_layouts:['original','left','right','bottom'],themes:['Standard','Blu','Verde','Rosso','Arancio','Viola','Scuro'],defaults:{app_name:'Gestionale & Inventario',short_name:'Gestionale',logo_url:'',icon_url:'/simplex-gestionale-demo/assets/icon-192.png',primary_color:'#0c2d50',secondary_color:'#e8edf7',accent_color:'#f7d977',background_color:'#f6f7fc',menu_layout:'original'}});
+export const moduleDefinitions=modules.map(m=>({key:m.id,label:m.name,ready:m.ready,default_enabled:m.ready,requires:m.id==='inventory'?['products']:m.id==='appointments'?['clients','services']:[],feature_requires:m.id==='orders'?['clients','products']:[]}));
+

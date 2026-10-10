@@ -1,0 +1,4 @@
+export const MAX_PRODUCT_PHOTOS=5;
+export function productImages(product={}){return Array.isArray(product.images)?[...product.images]:(product.image?[product.image]:[]);}
+export function withProductImages(product,images){return {...product,images:[...images],image:images[0]||''};}
+export function validateProductImages(product){if(product.images!==undefined&&!Array.isArray(product.images))throw Error('La galleria foto non è valida.');const images=productImages(product);if(images.length>MAX_PRODUCT_PHOTOS)throw Error('Puoi caricare al massimo 5 foto per articolo.');for(const image of images)if(typeof image!=='string'||!image||(!/^https:\/\//.test(image)&&!image.startsWith('/simplex-gestionale-demo/assets/')&&!/^data:image\/(?:jpeg|jpg|png|webp);base64,/.test(image)))throw Error('Usa foto JPG, PNG o WebP oppure un indirizzo HTTPS.');return withProductImages(product,images);}
